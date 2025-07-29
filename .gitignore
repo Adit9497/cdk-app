@@ -20,3 +20,9 @@ venv.bak/
 # CDK Context & Staging files
 .cdk.staging/
 cdk.out/
+.venv
+.vscode
+cdk.out/
+*.json
+python/
+*.zip

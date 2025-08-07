@@ -1,5 +1,6 @@
 import boto3
 import logging
+import json
 from boto3.dynamodb.conditions import Key
 
 
@@ -41,7 +42,7 @@ def handler(event, context):
         return {
             "statusCode": 200,
             "headers": {"Access-Control-Allow-Origin": "*"},
-            "body": {"graph_folder": graph_folder},
+            "body": json.dumps({"graph_folder": graph_folder}),
         }
     except Exception as e:
         logging.error(f"Error querying DynamoDB: {e}")
